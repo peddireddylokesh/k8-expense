@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: expense
+  # labels of deployment resource
+  labels:
+    app: mysql
+    tier: database
+    project: expense
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+      tier: database
+      project: expense
+  template:
+    metadata:
+      labels:
+        app: mysql
+        tier: database
+        project: expense
+    spec:
+      containers:
+        - name: mysql
+          image: peddireddylokesh/mysql:1.0.0
+ 
