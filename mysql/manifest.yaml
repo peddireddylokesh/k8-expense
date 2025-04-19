@@ -25,4 +25,20 @@ spec:
       containers:
         - name: mysql
           image: peddireddylokesh/mysql:1.0.0
+
+---
+apiVersion: v1
+kind: Service
+metadata:                 # thios is all internal to the cluster
+  name: mysql
+spec:
+  selector:
+    app: mysql
+    tier: database
+    project: expense
+  ports:
+  - protocol: TCP
+    port: 3306 # service port
+    targetPort: 3306 
+
  
