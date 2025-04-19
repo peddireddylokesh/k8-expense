@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: peddireddylokesh/frontend:1.0.0
+          image: peddireddylokesh/frontend:1.1.0
 
 ---
 apiVersion: v1
@@ -41,6 +41,6 @@ spec:
   ports:
   - protocol: TCP
     port: 80 # service port
-    targetPort: 80 
+    targetPort: 8080
 
  
