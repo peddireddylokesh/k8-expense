@@ -35,13 +35,14 @@ metadata:                 # this is all internal to the cluster
   name: frontend
   namespace: expense
 spec:
-  type: LoadBalancer
+  type: ClusterIP
+  # labels of service resource
   selector:
     app: frontend
     tier: frontend
     project: expense
   ports:
-  - protocol: TCP
+  - protocol: TCP  #  Optional, but recommended for clarity
     port: 80 # service port
     targetPort: 8080
 ---
